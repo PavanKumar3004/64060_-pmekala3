@@ -1,0 +1,58 @@
+---
+title: "Assignment 1"
+author: "Pavan Kumar Mekala"
+date: "2024-02-04"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 2 Importing Dataset into R
+```{r Importing Dataset}
+Dailyactivities <- read.csv("ss.csv")
+
+
+```
+## Imported data set from the website Kaggle.com by using the below link
+## https://www.kaggle.com/datasets/henryshan/sleep-health-and-lifestyle
+
+## 3 Print out descriptive statistics for a selection of quantitative and categorical variables
+
+```{r Descriptive Statistics}
+summary(Dailyactivities)
+head(Dailyactivities,n=10)
+tail(Dailyactivities,n=10)
+nrow(Dailyactivities)
+ncol(Dailyactivities)
+
+
+```
+## Printed descriptive statistics for a selection of quantitative and categorical variables and checked summary, head, tail, number of rows, number of columns by using summary, head, tail, nrow, ncol functions
+ 
+## 4 Transform at least one variable
+```{r Transform at least one variable}
+Daily.Steps_per_hour <- Dailyactivities$Daily.Steps /24
+Daily.Steps_per_hour
+```
+## Transformed the variable Dailyactivities$Daily.steps by dividing with 24 to measure the Daily.steps happening per hour and stored in Daily.Steps_per_hour
+
+## 5.1 Plot at least one quantitative variable
+```{r Plot at least one quatitative variable}
+hist(Dailyactivities$Quality.of.Sleep)
+
+```
+## Plotted the histogram of Dailyactivities$Quality.of.Sleep
+
+## 5.2 Scatter Plot
+```{r Scatter Plot}
+x=Dailyactivities$Stress.Level
+y=Dailyactivities$Age
+plot(x,y)
+
+```
+## Scatter plotted between Dailyactivities$Stress.level and Dailyactivities$Age by taking Dailyactivities$Stess.level on X and Dailyactivities$Age on Y
